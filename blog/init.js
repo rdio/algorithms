@@ -1,6 +1,6 @@
 (function() {
     "use strict";
     R.init = function() {
-        document.body.innerText = "Welcome to our blog!";
+        document.body.innerHTML = marked("**Welcome to our blog!**");
     };
 }).call(this);
