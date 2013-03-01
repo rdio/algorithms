@@ -638,7 +638,7 @@
       var libs = R.Utils.value(properties.libraries);
       var path = fullName.split('.');
       var name = _.last(path);
-      var templateName = ['Components/', path.join('/'), '/', name, '.bg.html'].join('');
+      var templateName = ['/Components/', path.join('/'), '/', name, '.bg.html'].join('');
       var hasTemplate = Bujagali.fxns[templateName] ? true : false;
       var className = path.join('_');
 

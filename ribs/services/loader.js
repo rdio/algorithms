@@ -2,6 +2,7 @@
   var currentlyLoading = {};
 
   var currentlyLoadingScripts = {};
+  var parser = new Bujagali.Parser();
   var COMPONENT_BASE = '/Components/';
 
   var VersionsModel, versionsModel, versionsXhr;
@@ -130,8 +131,16 @@
       var base = COMPONENT_BASE + path;
       var name = bits.pop();
       var src = base + '/' + name +  '.js';
+      var template = base + '/' + name + '.bg.html';
       currentlyLoadingScripts[src] = 1;
-      R.injectScript(src, null, self._successLoading, self._errorLoading);
+      $.ajax(template, {
+        success: function(response) {
+          Bujagali.fxns[template] = eval(parser.parse(response));
+        },
+        complete: function() {
+          R.injectScript(src, null, self._successLoading, self._errorLoading);
+        }
+      });
     },
     _successLoading: function(src) {
       delete currentlyLoadingScripts[src];

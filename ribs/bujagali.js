@@ -686,7 +686,6 @@ var Bujagali = (function() {
           self._renderLock = false;
         }
 
-        // Check if we have a template to render, else just return ourselves
         if (!self.monad) {
           $(self.el).empty();
           doneRendering();
