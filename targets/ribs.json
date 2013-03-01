@@ -18,6 +18,7 @@
   "scripts": [
     ["/ribs/", [
       "rdio_base.js",
+      "utils.js",
       "logger.js",
       "style_manager.js",
       "component.js",
