@@ -97,8 +97,7 @@
     _readyToRender: function(k, isSubtree) {
       var self = this;
       return bgProto.render.call(self, {
-        data: self.model || new Backbone.Model(),
-        deps: R.loader.model.get('components').get(self._name)
+        data: self.model || new Backbone.Model()
       }, function() {
         if (k) {
           k();
@@ -639,25 +638,9 @@
       var libs = R.Utils.value(properties.libraries);
       var path = fullName.split('.');
       var name = _.last(path);
-      var templateName = ['client/Components/', path.join('/'), '/', name, '.bg.html'].join('');
-      var versions = R.loader.model.get('components').get(fullName);
-      var hasTemplate = versions ? versions[templateName] : false;
+      var templateName = ['Components/', path.join('/'), '/', name, '.bg.html'].join('');
+      var hasTemplate = Bujagali.fxns[templateName] ? true : false;
       var className = path.join('_');
-
-      if (!versions) {
-        console.warn('could not find version for ' + fullName);
-      }
-
-      //XXX: this is temporary until R.loader has a configurable root option
-      if (libs && R.serverInfo.get('prod')) {
-        libs = _.map(libs, function(path) {
-          if (externalRe.test(path)) {
-            return path;
-          } else {
-            return '/media' + path;
-          }
-        });
-      }
 
       properties = _.extend({
         template: hasTemplate ? templateName : null,
@@ -695,7 +678,6 @@
           _.extend(componentClass, namespace[name]);
         }
         namespace[name] = componentClass;
-        namespace[name].version = versions;
         loaded();
       });
     },
