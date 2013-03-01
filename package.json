@@ -1,0 +1,17 @@
+{
+  "name": "rdio-engblog",
+  "version": "0.0.0",
+  "description": "Rdio's engineering blog",
+  "main": "",
+  "dependencies": {
+    "grunt": "~0.4.0",
+    "grunt-bbb-server": "~0.1.0-alpha.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "gitHead": "963361ffedb9a3532e3d4786ce9a6b67d9466e66"
+}
