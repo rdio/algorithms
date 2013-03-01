@@ -12,7 +12,6 @@ var Bujagali = (function() {
   var root = this;
 
   var SCRIPT_BASE_URL = '/';
-  var VERIFY_VERSIONS = true;
 
   /* ECMAScript 5!! */
   if (!Object.create) {
@@ -28,15 +27,7 @@ var Bujagali = (function() {
     null;
   var pendingExec = {};
 
-  function doVersionsMatch(v1, v2) {
-    return v1 != v2;
-  };
-
-  var needNewVersion = doVersionsMatch;
-
-  if (root.__testing__) {
-    needNewVersion = function() { return false; };
-  }
+  needNewVersion = function() { return false; };
 
   /* escaped and unescaped version of special characters */
   var specialCharacters = {
@@ -503,26 +494,15 @@ var Bujagali = (function() {
 
       var template = module.fxns[this.name];
       if (template) {
-        if (needNewVersion(template.version, this.version)) {
-          console.log('old template cached, requesting new one');
-          this._pending();
-          this.load();
-        }
-        else {
-          this.exec(markup);
-        }
-      }
-      else {
-        this._pending();
-        this.load();
+        this.exec(markup);
+      } else {
+        throw new Error("Could not find template " + this.name);
       }
     },
 
     renderOnce: function(context, callback, args) {
       var template = module.fxns[this.name];
-      this.version = (context.deps && context.deps[this.name]) || this.version;
-
-      if (template && (template.version == this.version) && template.rendered) {
+      if (template && template.rendered) {
         // we've rendered this already, just call back with the current data
         callback(context.data, null, args);
       }
@@ -566,49 +546,6 @@ var Bujagali = (function() {
           f.apply(self, args);
         }
       });
-    },
-
-    /**
-     * Bujagali.Monad#load() -> undefined
-     *
-     * Loads the template but does not execute it.
-     *
-     * You probably won't need to use this. Look at Bujagali.Monad#render()
-     * instead.
-     **/
-    load: function() {
-      var src;
-      if (this.loading || module.fxns[this.name] && module.fxns[this.name].version == this.version) {
-        return; // already have the right version loaded
-      }
-
-      if (this.version) {
-        src = this.root + 'bujagali/' + this.name + '.' + this.version + '.js';
-      }
-      else {
-        throw new Error('No template version found for ' + this.name);
-      }
-
-      this.loading = true;
-
-      if (headEl) {
-        var script;
-        script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = src;
-
-        headEl.appendChild(script);
-      }
-      else {
-        // Server side environment
-        if (typeof load != 'undefined') {
-          load(src);
-        }
-        else if (typeof require != 'undefined') {
-          var fs = require('fs');
-          eval(fs.readFileSync(src).toString());
-        }
-      }
     },
 
     /**
