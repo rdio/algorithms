@@ -658,14 +658,10 @@ var Bujagali = (function() {
 
         function doneRendering(data) {
           if (self.onRendered) {
-            R.Utils.reportErrors(function() {
-              self.onRendered(data);
-            })();
+            self.onRendered(data);
           }
           if (callback) {
-            R.Utils.reportErrors(function() {
-              callback(data);
-            })();
+            callback(data);
           }
           self.trigger('render', data);
 
