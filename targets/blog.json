@@ -10,5 +10,10 @@
             "init.js"
         ]]
     ],
+    "css": [
+        ["/blog/", [
+            "normalize.css"
+        ]]
+    ],
     "main": "R.init"
 }
