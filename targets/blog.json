@@ -1,0 +1,9 @@
+{
+    "targetDependencies": ["ribs"],
+    "scripts": [
+        ["/blog/", [
+            "init.js"
+        ]]
+    ],
+    "main": "R.init"
+}
