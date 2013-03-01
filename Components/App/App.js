@@ -1,7 +1,6 @@
 (function() {
     "use strict";
     R.Component.create('App', {
-        dependencies: ['Home'],
         initialize: function() {
             R.Component.prototype.initialize.apply(this, arguments);
             this.listen(Backbone.history, 'route', this.route);
@@ -17,11 +16,25 @@
                 console.warn("No route found for", route);
             }
         },
-        home: function() {
+        _renderContent: function(contentComponent) {
             var self = this;
-            this.currentContent = this.addChild(new R.Components.Home());
+            this.currentContent = this.addChild(contentComponent);
             this.currentContent.render(function() {
                 self.$el.append(self.currentContent.el);
+            });
+        },
+        home: function() {
+            var self = this;
+            R.loader.load(['Home'], function() {
+                self._renderContent(new R.Components.Home());
+            });
+        },
+        post: function(post) {
+            var self = this;
+            R.loader.load(['Post'], function() {
+                self._renderContent(new R.Components.Post({
+                    id: post
+                }));
             });
         }
     });

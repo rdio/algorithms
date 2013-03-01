@@ -3,7 +3,7 @@
     R.init = function() {
         var router = new Backbone.Router({
             routes: {
-                "post/:name": "post",
+                "post/:name/": "post",
                 "": "home"
             }
         });

@@ -252,7 +252,7 @@
       if (self.model || !(self.modelClass || self.modelFactory)) {
         self._verifyModelType();
         if (self.model && self._addModelFields() && self._shouldFetch()) {
-          self._fetchModel(k);
+          self._fetchModel(k, self.model.fetchOptions);
         } else {
           k();
         }
@@ -276,7 +276,7 @@
         self._fetchModel(function() {
           self._onModelCreated();
           k();
-        });
+        }, self.model.fetchOptions);
       } else {
         self._onModelCreated();
         k();
@@ -316,9 +316,9 @@
       return false;
     },
 
-    _fetchModel: function(k) {
+    _fetchModel: function(k, options) {
       var self = this;
-      self.pendingFetch = self.model.fetch({
+      self.pendingFetch = self.model.fetch(_.extend({
         success: function(model, response) {
           self.pendingFetch = null;
           k();
@@ -333,7 +333,7 @@
         // We don't trigger events because we might be rendering, and we don't
         // want a change to result in a 'render while rendering' error.
         silent: true
-      });
+      }, options));
     },
 
     isType: function(obj, type) {
