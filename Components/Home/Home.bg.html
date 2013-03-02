@@ -1,4 +1,5 @@
 <ol>
-    <li><a href="/post/hello/">Hello World!</a></li>
-    <li><a href="/post/another/">Another post</a></li>
+    {% ctx.each(function(model) { %}
+        <li><a href="/post/{{ model.get('slug') }}/">{{ model.get('title') }}</a></li>
+    {% }); %}
 </ol>
