@@ -20,7 +20,7 @@
             var self = this;
             this.currentContent = this.addChild(contentComponent);
             this.currentContent.render(function() {
-                self.$el.append(self.currentContent.el);
+                self.$('.content').append(self.currentContent.el);
             });
         },
         home: function() {

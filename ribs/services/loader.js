@@ -132,12 +132,18 @@
       var name = bits.pop();
       var src = base + '/' + name +  '.js';
       var template = base + '/' + name + '.bg.html';
-      currentlyLoadingScripts[src] = 1;
+      var style = base + '/' + name + '.less';
+      $.ajax(style, {
+        success: function(response) {
+          R.StyleManager.loadComponentLess(name, response);
+        }
+      });
       $.ajax(template, {
         success: function(response) {
           Bujagali.fxns[template] = eval(parser.parse(response));
         },
         complete: function() {
+          currentlyLoadingScripts[src] = 1;
           R.injectScript(src, null, self._successLoading, self._errorLoading);
         }
       });

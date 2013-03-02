@@ -11,8 +11,10 @@
         R.Services.start();
 
         $('body').on('click', 'a', function(e) {
-            e.preventDefault();
-            router.navigate(e.target.pathname, true);
+            if (e.target.host === window.location.host) {
+                e.preventDefault();
+                router.navigate(e.target.pathname, true);
+            }
         });
 
         R.Services.ready('Loader', function() {
