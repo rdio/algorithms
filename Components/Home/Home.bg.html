@@ -1,6 +1,4 @@
-<ol>
-    {% ctx.each(function(model) { %}
-        {! new R.Components.Post({ postId: model.get('slug') }) !}
-        <hr />
-    {% }); %}
-</ol>
+{% ctx.each(function(model) { %}
+    {! new R.Components.Post({ postId: model.get('slug') }) !}
+    <hr />
+{% }); %}

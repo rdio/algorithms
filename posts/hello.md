@@ -1,4 +1,4 @@
-Welcome to the Rdio engineering blog!
+[Welcome to the Rdio engineering blog!](/post/hello/)
 =====================================
 
 ##### By [Justin Tulloss][1] on March 01, 2013

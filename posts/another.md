@@ -1,5 +1,7 @@
-Title
------
+[Title](/post/another/)
+=====
+
+##### By Justin Tulloss
 
 *Another post*
 
