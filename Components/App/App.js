@@ -33,7 +33,7 @@
             var self = this;
             R.loader.load(['Post'], function() {
                 self._renderContent(new R.Components.Post({
-                    id: post
+                    postId: post
                 }));
             });
         }

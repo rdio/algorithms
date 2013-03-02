@@ -15,7 +15,7 @@
     R.Component.create('Post', {
         modelFactory: function() {
             return new PostModel({
-                id: this.options.id + '.md'
+                id: this.options.postId + '.md'
             });
         }
     });
