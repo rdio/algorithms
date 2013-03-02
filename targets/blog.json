@@ -13,6 +13,11 @@
             "init.js"
         ]]
     ],
+    "less": [
+        ["/blog/", [
+            "main.less"
+        ]]
+    ],
     "css": [
         ["/blog/", [
             "normalize.css"
