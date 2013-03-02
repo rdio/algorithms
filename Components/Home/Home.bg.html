@@ -1,5 +1,6 @@
 <ol>
     {% ctx.each(function(model) { %}
-        <li><a href="/post/{{ model.get('slug') }}/">{{ model.get('title') }}</a></li>
+        {! new R.Components.Post({ postId: model.get('slug') }) !}
+        <hr />
     {% }); %}
 </ol>
