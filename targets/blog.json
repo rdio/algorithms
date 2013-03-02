@@ -3,6 +3,9 @@
     "dependencies": [
         ["/blog/", [
             "marked.js"
+        ]],
+        ["http://yandex.st/highlightjs/7.3/", [
+            "highlight.min.js"
         ]]
     ],
     "scripts": [
@@ -13,6 +16,11 @@
     "css": [
         ["/blog/", [
             "normalize.css"
+        ]]
+    ],
+    "externalCss": [
+        ["http://yandex.st/highlightjs/7.3/styles/", [
+            "default.min.css"
         ]]
     ],
     "main": "R.init"

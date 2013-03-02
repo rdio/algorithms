@@ -1,5 +1,10 @@
 (function() {
     "use strict";
+    var langMap = {
+        js: 'javascript',
+        py: 'python'
+    };
+
     R.init = function() {
         var router = new Backbone.Router({
             routes: {
@@ -9,6 +14,19 @@
         });
 
         R.Services.start();
+
+        marked.setOptions({
+            highlight: function(code, lang) {
+                lang = langMap[lang] || lang;
+                try {
+                    var highlighted = hljs.highlight(lang, code, true);
+                    return highlighted.value;
+                } catch(exc) {
+                    console.warn('Unhighlightable language', lang);
+                    return code;
+                }
+            }
+        });
 
         $('body').on('click', 'a', function(e) {
             if (e.target.host === window.location.host) {
