@@ -12,3 +12,9 @@ R.Component.create('Post', {
     }
 });
 ```
+
+Here's a list!
+
+ - Thing one
+ - Thing two
+ - Last thing
