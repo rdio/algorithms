@@ -1,9 +1,34 @@
+@subtitle-color: #94999c;
+@title-color: #008fd5;
+
 .App {
-    > h1 {
+    > header {
         text-align: center;
+        width: 70%;
+        padding: 75px 0;
+        margin: 0 auto;
+        h1 {
+            font-weight: 400;
+            font-size: 4.5em;
+            line-height: 100%;
+            a, a:visited {
+                color: @title-color;
+            }
+            margin: 0 0 10px;
+        }
+        h2 {
+            font-weight: 400;
+            font-size: 1em;
+            color: @subtitle-color;
+            a, a:visited {
+                color: @subtitle-color;
+            }
+            margin: 0 0 5px;
+        }
     }
     .content {
-        max-width: 720px;
+        max-width: 980px;
+        width: 70%;
         margin: 0 auto;
     }
 }

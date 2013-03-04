@@ -1,0 +1,40 @@
+@text-color: #94999c;
+.Post {
+    padding-bottom: 75px;
+    h1, {
+        font-weight: 400;
+        font-size: 2.25em;
+        margin: 0 0 25px;
+        a {
+            color: #32393d;
+        }
+    }
+    h5 {
+        &::before {
+            content: "— ";
+        }
+        font-size: 10px;
+        letter-spacing: 1px;
+        border-top: 1px solid #e1e4e6;
+        text-transform: uppercase;
+        padding-top: 25px;
+        color: #94999c;
+        line-height: 160%;
+        font-weight: normal;
+    }
+
+    ul, ol {
+        padding: 0;
+        margin: 0 0 25px;
+    }
+    p, li{
+        color: @text-color;
+    }
+    a {
+        color: #008fd5;
+    }
+    a:hover {
+        color: #161c1f;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+}

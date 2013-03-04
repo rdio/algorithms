@@ -1,8 +1,6 @@
 [Title](/post/another/)
 =====
 
-##### By Justin Tulloss
-
 *Another post*
 
 Here's some code!
@@ -20,3 +18,5 @@ Here's a list!
  - Thing one
  - Thing two
  - Last thing
+
+##### By Justin Tulloss
