@@ -20,12 +20,8 @@
     ],
     "css": [
         ["/blog/", [
-            "normalize.css"
-        ]]
-    ],
-    "externalCss": [
-        ["http://yandex.st/highlightjs/7.3/styles/", [
-            "default.min.css"
+            "normalize.css",
+            "syntax.css"
         ]]
     ],
     "main": "R.init"
