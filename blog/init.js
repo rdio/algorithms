@@ -5,6 +5,11 @@
         py: 'python'
     };
 
+    _.templateSettings = {
+        interpolate: /\{\{(.+?)\}\}/g,
+        escape: /\{\@(.+?)\@\}/g
+    };
+
     R.init = function() {
         var router = new Backbone.Router({
             routes: {
@@ -29,9 +34,11 @@
         });
 
         $('body').on('click', 'a', function(e) {
-            if (e.target.host === window.location.host) {
+            if (e.currentTarget.host === window.location.host) {
                 e.preventDefault();
-                router.navigate(e.target.pathname, true);
+                router.navigate(e.currentTarget.pathname, true);
+            } else {
+                e.currentTarget.target = "_blank";
             }
         });
 
