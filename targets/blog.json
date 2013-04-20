@@ -10,7 +10,8 @@
     ],
     "scripts": [
         ["/blog/", [
-            "init.js"
+            "init.js",
+            "date.js"
         ]]
     ],
     "less": [
