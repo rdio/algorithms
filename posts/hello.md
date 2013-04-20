@@ -23,7 +23,6 @@ in the coming months.
 As always, if you're intersted in helping us out with this and other challenges,
 [we're hiring!][4]
 
-[1]: http://www.rdio.com/people/justin_tulloss/
 [2]: http://www.rdio.com/
 [3]: http://backbonejs.org/
 [4]: http://www.rdio.com/careers/
