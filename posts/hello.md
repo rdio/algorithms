@@ -1,5 +1,5 @@
-[Hello, world!](/post/hello/)
-=====================================================
+Hello, world!
+=============
 
 Welcome to the [Rdio][2] engineering blog!
 
@@ -27,5 +27,3 @@ As always, if you're intersted in helping us out with this and other challenges,
 [2]: http://www.rdio.com/
 [3]: http://backbonejs.org/
 [4]: http://www.rdio.com/careers/
-
-##### By [Justin Tulloss][1] on March 01, 2013
