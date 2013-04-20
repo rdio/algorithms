@@ -1,7 +1,7 @@
 @text-color: #94999c;
 .Post {
     padding-bottom: 75px;
-    h1, {
+    h1 {
         font-weight: 400;
         font-size: 2.25em;
         margin: 0 0 25px;
@@ -33,5 +33,15 @@
     a:hover {
         color: #161c1f;
         border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+}
+
+@media all and (max-width: 480px) {
+    .Post {
+        padding-bottom: 50px;
+        h1 {
+            font-size: 2em;
+            margin: 0 0 15px;
+        }
     }
 }
