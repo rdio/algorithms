@@ -1,4 +1,4 @@
-[Title](/post/another/)
+Title
 =====
 
 *Another post*
@@ -34,5 +34,3 @@ Here's a list!
 
 And a polar bear!
 ![Polar bear](http://images5.fanpop.com/image/photos/29100000/Polar-Bear-Cub-animal-cubs-29105921-1600-1200.jpg)
-
-##### By Justin Tulloss
