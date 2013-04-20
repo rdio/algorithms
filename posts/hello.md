@@ -20,7 +20,7 @@ highly optimized version we've got running on the Rdio side of things, but it's
 a first step, and one that hopefully we'll be able to share with the community
 in the coming months.
 
-As always, if you're intersted in helping us out with this and other challenges,
+As always, if you're interested in helping us out with this and other challenges,
 [we're hiring!][4]
 
 [2]: http://www.rdio.com/
