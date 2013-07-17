@@ -1,7 +1,10 @@
 (function() {
-    var githubUrl = "https://api.github.com/repos/JustinTulloss/engblog/commits";
-    var githubToken = "";
-    var bylineTemplate = _.template('<a href="https://github.com/JustinTulloss/engblog/commits/master/posts/{{ post }}">Last modified</a> by <a href="{{ url }}">{@ name @}</a> on {{ date }}');
+    var commitsPath = "rdio/algorithms/commits";
+    var githubUrl = _.template("https://api.github.com/repos/{{ commitsPath }}", {
+        commitsPath: commitsPath
+    });
+    var githubToken = "05ecdbfddb50419a2afb9026dd4229df8f8c495a";
+    var bylineTemplate = _.template('<a href="https://github.com/{{ commitsPath }}/master/posts/{{ post }}">Last modified</a> by <a href="{{ url }}">{@ name @}</a> on {{ date }}');
 
     var PostModel = Backbone.Model.extend({
         shouldFetch: true,
@@ -53,6 +56,7 @@
         onCommitChanged: function() {
             var commitISO = this.model.get('commit').author.date;
             var byline = bylineTemplate({
+                commitsPath: commitsPath,
                 post: this.model.id,
                 url: this.model.get('author').html_url,
                 name: this.model.get('commit').author.name,
