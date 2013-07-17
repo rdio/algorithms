@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "description": "Rdio's engineering blog",
   "main": "",
-  "dependencies": {
+  "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-bbb-server": "~0.1.0-alpha.3"
+    "grunt-contrib-connect": "~0.3.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,9 +1,15 @@
 module.exports = function(grunt) {
-  grunt.loadNpmTasks('grunt-bbb-server');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.initConfig({
-    server: {
-      port: 8080,
-      base: './'
+    connect: {
+      server: {
+        options: {
+          port: 4000,
+          keepalive: true
+        }
+      }
     }
   });
+
+  grunt.registerTask('server', ['connect:server']);
 };
