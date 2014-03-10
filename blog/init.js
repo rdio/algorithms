@@ -21,6 +21,8 @@
         R.Services.start();
 
         marked.setOptions({
+            gfm: true,
+            tables: true,
             highlight: function(code, lang) {
                 lang = langMap[lang] || lang;
                 try {
