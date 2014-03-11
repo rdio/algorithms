@@ -37,6 +37,9 @@
         }
     });
     R.Component.create('Post', {
+        options: {
+            showComments: true
+        },
         initialize: function() {
             R.Components.Post.callSuper(this, 'initialize');
             this._postSlug = this.options.postId || this.options.urlMatches[0];
@@ -52,6 +55,9 @@
             var title = $(this.$('h1')[0]);
             var $link = $('<a />').attr('href', '/post/' + this._postSlug + '/');
             title.wrap($link);
+            if (this.options.showComments) {
+              this._renderDisqusComments();
+            }
         },
         onCommitChanged: function() {
             var commitISO = this.model.get('commit').author.date;
@@ -63,6 +69,15 @@
                 date: R.Date.formatLongDate(commitISO)
             });
             this.$('h5.byline').html(byline);
+        },
+        _renderDisqusComments: function() {
+            // This code provided by disqus http://rdioalgorithmsandblues.disqus.com/admin/settings/universalcode/
+            var disqus_shortname = 'rdioalgorithmsandblues';
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }
     });
 }).call(this);

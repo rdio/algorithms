@@ -1,2 +1,6 @@
 {{ marked(ctx.get('markdown')) }}
 <h5 class="byline"></h5>
+<div id="disqus_thread"></div>
+{% if (args.showComments) { %}
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% } %}
