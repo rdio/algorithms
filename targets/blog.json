@@ -3,7 +3,7 @@
     "dependencies": [
         ["/blog/", [
             "marked.js",
-            "highlight-8.0.min.js"
+            "highlight.pack.js"
         ]]
     ],
     "scripts": [
@@ -19,8 +19,10 @@
     ],
     "css": [
         ["/blog/", [
-            "normalize.css",
-            "syntax.css"
+            "normalize.css"
+        ]],
+        ["/blog/syntax/", [
+            "solarized_light.css"
         ]]
     ],
     "main": "R.init"
