@@ -28,7 +28,7 @@ Eric is one of our amazingly talented designers here at rdio. Eric reached out t
 right before hack day and pitched a redesign of our settings page and adding
 profile editing to mobile. Currently our settings page looks like this:
 
-<img src="media/hack_day/settings.PNG" width=250 height=444/>
+<img src="/media/hack_day/settings.PNG" width=250 height=444/>
 
 Not very attractive and ripe for disruption =]. I agreed and we got to work. Eric whipped
 up some flats based on some of our existing UI. I began writing the transaction code between
@@ -40,15 +40,15 @@ your profile image.
 After two days of hacking (and some time on the weekend) I was able to put together a fully
 functional prototype of this new functionality. Here is the new look.
 
-<div><img src="media/hack_day/1.png" width=250 height=444/>
-<img src="media/hack_day/2.png" width=250 height=444/></div>
+<div><img src="/media/hack_day/1.png" width=250 height=444/>
+<img src="/media/hack_day/2.png" width=250 height=444/></div>
 
 Clicking on the gear icon on the upper right transitions the view to 
 profile editing and allows you to do things like set your username,
 change your email address and password, etc...
 
-<div><img src="media/hack_day/3.png" width=250 height=444/>
-<img src="media/hack_day/4.png" width=250 height=444/></div>
+<div><img src="/media/hack_day/3.png" width=250 height=444/>
+<img src="/media/hack_day/4.png" width=250 height=444/></div>
 
 Pretty huge improvement. The Monday following our hacks everybody presents what they worked
 on. Eric did a great job of showing what we had completed and it went over really well with the group.
