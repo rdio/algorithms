@@ -18,7 +18,7 @@ as you walk by.
 - Eavesdrop. This hack was intended to be built into the people page on mobile
 if we ever build that. The idea behind this hack was that you could go to a page and
 see all of the people you are following who are online and what they are currently
-listening too. When you click on them you would instantly be eavesdropping on their
+listening to. When you click on them you would instantly be eavesdropping on their
 playback. So every song they listen to would load up on your player.
 
 The problem with these two hacks is that neither one of them would probably make it
