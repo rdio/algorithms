@@ -1,5 +1,13 @@
+APACHE=False
+ifeq ($(APACHE), True)
+	PWD := $(shell pwd)
+	SERVER := httpd -d $(PWD) -e info -f $(PWD)/dev.conf -k start -DFOREGROUND
+else
+	SERVER := python -m SimpleHTTPServer 4000
+endif
+
 server:
-	python -m SimpleHTTPServer 4000
+	$(SERVER)
 
 # This only works on Rdio's internal network, you'll need to VPN in to deploy
 deploy:
