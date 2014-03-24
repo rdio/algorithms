@@ -24,7 +24,7 @@ R.Date = (function() {
   };
 
   function pad(num, padWith) {
-    if (padWith == null) {
+    if (padWith === null) {
       padWith = paddingOperatorMap['0'];
     }
 
@@ -47,8 +47,8 @@ R.Date = (function() {
       return pad(date.getDate(), padWith);
     },
     e: function(date, padWith) {
-      if (padWith == null) {
-        padWith = paddingOperatorMap['_'];
+      if (padWith === null) {
+        padWith = paddingOperatorMap._;
       }
 
       return pad(date.getDate(), padWith);
