@@ -22,7 +22,7 @@ listening to. When you click on them you would instantly be eavesdropping on the
 playback. So every song they listen to would load up on your player.
 
 The problem with these two hacks is that neither one of them would probably make it
-into product since they are very specific uses of the platform. Which is fine, but I
+into product since they are very specific use cases of the platform. Which is fine, but I
 really wanted to make something that we could roll into our product. Queue [Eric Campbell][3].
 Eric is one of our amazingly talented designers here at rdio. Eric reached out to me
 right before hack day and pitched a redesign of our settings page and adding
