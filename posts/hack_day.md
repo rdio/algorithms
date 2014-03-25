@@ -7,7 +7,7 @@ one hack day (our hack days have been amped up to two days now) per quarter. It 
 an opportunity for us to shift our attention to a small project and then pitch
 it to our peers. That and we get free pizza.
 
-I always have big asperations when approaching hack day. This one was no different.
+I always have big aspirations when approaching hack day. This one was no different.
 My two projects I was going to pitch:
 
 - Wall of Shame. Each pod of desks at Rdio usually has four people and a TV. The concept behind this
