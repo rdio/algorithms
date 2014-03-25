@@ -55,7 +55,8 @@ In make, that would look something like this:
 JSHINT=jshint # You can also make this a relative path if you don't want to install jshint globally
 JSHINTFLAGS=
 
-jshint: %.js
+js_files=$(shell find . -name '*.js')
+jshint: $(js_files)
 	$(JSHINT) $(JSHINTFLAGS) $*
 
 # .PHONY just tells make that these rules don't produce files. So if there is a
