@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+import codecs
+from datetime import datetime
+import json
+import xml.etree.ElementTree as ET
+
+root = ET.Element('feed', { 'xmlns': "http://www.w3.org/2005/Atom" })
+title = ET.Element('title')
+title.text = "Algorithms and Blues"
+subtitle = ET.Element('subtitle')
+subtitle.text = "The Rdio Engineering Blog"
+updated = ET.Element('updated')
+updated.text = datetime.now().isoformat()
+id = ET.Element('id')
+id.text = 'https://algorithms.rdio.com/'
+
+root.extend((
+  title,
+  subtitle,
+  id,
+  ET.Element('link', href='http://algorithms.rdio.com/atom.xml', rel='self'),
+  ET.Element('link', href='http://algorithms.rdio.com/'),
+  updated,
+))
+
+with codecs.open('posts/published_posts.json') as fd:
+  posts = json.load(fd)
+  for post in posts:
+    url = "https://algorithms.rdio.com/post/%s/" % post['slug']
+    entry = ET.SubElement(root, 'entry')
+    title = ET.SubElement(entry, 'title')
+    title.text = post['title']
+    id = ET.SubElement(entry, 'id')
+    id.text = url
+    entry.append(ET.Element('link', href=url))
+    content = ET.SubElement(entry, 'content', type="text")
+    with codecs.open('posts/%s.md' % post['slug'], 'r', 'utf8') as fd:
+      content.text = fd.read()
+
+tree = ET.ElementTree(root)
+tree.write('atom.xml', encoding='utf-8', xml_declaration=True)
