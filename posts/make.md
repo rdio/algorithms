@@ -57,7 +57,7 @@ JSHINTFLAGS=
 
 js_files=$(shell find . -name '*.js')
 jshint: $(js_files)
-	$(JSHINT) $(JSHINTFLAGS) $*
+	$(JSHINT) $(JSHINTFLAGS) $?
 
 # .PHONY just tells make that these rules don't produce files. So if there is a
 # file called "jshint", it won't interpret that file as the output of the
