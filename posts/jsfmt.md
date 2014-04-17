@@ -13,7 +13,7 @@ Analyze What?
 
 The Rdio app uses a component architecture where a component is a collection of HTML, CSS and JavaScript that form a complete set of functionality. Buttons, forms, and views are all components as well as the overall Rdio app itself which in turn depends on a number of other components. We explicitly declare these dependencies in each component declaration so we know which subsequent components to load at runtime:
 
-```lang=js
+```
 R.Components.create('MyComponent', {
   dependencies: ['MyOtherComponent']
 });
@@ -44,7 +44,7 @@ I've spent the last year thinking about the problem and a more elegant solution 
 
 The first thing we want to do is take a plain JavaScript string that represents what we want to search for and parse it into an AST. For example, if we want to find the function call  `"_.reduce()"` then we parse that string into an AST that looks something like this:
 
-```lang=json
+```
 {
     "type": "ExpressionStatement",
     "expression": {
