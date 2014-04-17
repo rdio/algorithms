@@ -13,7 +13,7 @@ Analyze What?
 
 The Rdio app uses a component architecture where a component is a collection of HTML, CSS and JavaScript that form a complete set of functionality. Buttons, forms, and views are all components as well as the overall Rdio app itself which in turn depends on a number of other components. We explicitly declare these dependencies in each component declaration so we know which subsequent components to load at runtime:
 
-```
+```javascript
 R.Components.create('MyComponent', {
   dependencies: ['MyOtherComponent']
 });
@@ -44,7 +44,7 @@ I've spent the last year thinking about the problem and a more elegant solution 
 
 The first thing we want to do is take a plain JavaScript string that represents what we want to search for and parse it into an AST. For example, if we want to find the function call  `"_.reduce()"` then we parse that string into an AST that looks something like this:
 
-```
+```json
 {
     "type": "ExpressionStatement",
     "expression": {
@@ -76,23 +76,29 @@ I've iterated a lot on how to best handle a list in the AST, such as the `argume
 
 As an example, if we wanted to find all occurrences of Underscore's reduce function with 3 arguments:
 
-  `jsfmt --search "_.reduce(a, b, c)" <source>`
+```bash
+jsfmt --search "_.reduce(a, b, c)" <source>
+```
 
 The wildcards `a`, `b` and `c` will match any expression at that location. Furthermore, we match any `_.reduce` call with 3 _or more_ arguments.
 
 Taking this example a step further, what if we wanted to replace all occurrences of one function with another such as a library upgrade or dropping support for an older browser? For example, replacing all `_.reduce` calls with the native JavaScript `Array.prototype.reduce`. We use the same syntax as before but also specifying the replacement after an arrow (`[match] -> [replacement]`):
 
-  `jsfmt --replace "_.reduce(a, b, c) -> a.reduce(b, c)" <source>`
+```bash
+jsfmt --replace "_.reduce(a, b, c) -> a.reduce(b, c)" <source>
+```
 
 We can use the same wildcards in the "match" as placeholders in our "replacement".
 
 Back to the original problem of finding component dependencies. Before `jsfmt` even our simple static analysis was unwieldy. Now searching for component dependencies is simple and intuitive:
 
-`jsfmt --search "R.Component.create(a, { dependencies: z })" <source>`
+```bash
+jsfmt --search "R.Component.create(a, { dependencies: z })" <source>
+```
 
 There's also a JavaScript API exposed:
 
-```
+```javascript
 jsfmt.search(source, "R.Component.create(a, { dependencies: z })").forEach(function(matches, wildcards) {
   console.log(wildcards.z);
 });
