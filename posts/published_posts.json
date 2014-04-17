@@ -1,5 +1,9 @@
 [
     {
+        "title": "Introducing jsfmt - JavaScript-aware formatting, search and replace",
+        "slug": "jsfmt"
+    },
+    {
         "title": "The Ultimate Frontend Build Tool: `make`",
         "slug": "make"
     },
