@@ -10,10 +10,10 @@ The user takes a picture of the album cover. This photo is matched to an existin
 As illustrated below, a photo that more closely resembles the cataloged image will have more matched key points, regardless of rotation or excess information. In each image set, the cataloged album artwork image is on the left and the user's uploaded photo from a magazine is on the right.  
 
 <img src="/media/allison_deal_hack_day_june_2014/sve_example.png"></img>  
-<em>Comparing feature points of a cataloged album artwork image of Sharon Van Etten: Are We There with a photograph of the same album cover.</em>  
+<em>[Above] Comparing feature points of a cataloged album artwork image of Sharon Van Etten: Are We There with a photograph of the same album cover.</em>  
 
 <img src="/media/allison_deal_hack_day_june_2014/sve_beach_boys_example.png"></img>  
-<em>Comparing feature points of a cataloged album artwork image of The Beach Boys: Pet Sounds with a photograph of the album Sharon Van Etten: Are We There.</em>  
+<em>[Above] Comparing feature points of a cataloged album artwork image of The Beach Boys: Pet Sounds with a photograph of the album Sharon Van Etten: Are We There.</em>  
 
 Once the photo is best matched to a specific image in the Rdio album artwork database, the Rdio Album ID of the best matching image is used play the album.  
 
