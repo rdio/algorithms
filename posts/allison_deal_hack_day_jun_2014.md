@@ -8,7 +8,7 @@ Currently, [Rdio users can connect with Shazam](http://blog.rdio.com/us/2014/03/
 The user takes a picture of the album cover. This photo is matched to an existing album image in Rdio's database of album artwork using feature detection and matching. This hack was built using the [OpenCV](http://opencv.org/) library, which utilizes the [ORB (Oriented FAST and Rotated BRIEF)](http://www.vision.cs.chubu.ac.jp/CV-R/pdf/Rublee_iccv2011.pdf) technique [1]. ORB detects key points by identifying corners and determining their orientation; it is both rotation invariant and resistant to noise. Once key point vectors in both the photo and each cataloged album image are identified, a brute force match is used to find the best matches in the each photo-album artwork image pair. [Lowe's ratio test](http://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf) [2] is then applied to the match pairs, which discards a high percentage of the false matches. The cataloged album image with the highest number of remaining match pairs (with the photo) is determined to be the best match.  
 
 As illustrated below, regardless of rotation or excess information, a photo more closely resembling the cataloged image will have more matched key points.  In each image set, the cataloged album artwork image is on the left and the user's uploaded photo from a magazine is on the right.  
-<img src="/img/sve_example.png"></img>  <img src="/img/sve_beach_boys_example.png"></img>
+<img src="/media/allison_deal_hack_day_june_2014/sve_example.png"></img>  <img src="/media/allison_deal_hack_day_june_2014/sve_beach_boys_example.png"></img>
 
 Once the photo is best matched to a specific image in the Rdio album artwork database, the Rdio Album ID of the best matching image is used play the album.  
 
