@@ -172,7 +172,7 @@ The current implementation works as advertized, but is pretty alpha quality. Rig
 
 ## Conclusions
 
-This is just a small look at the exciting future that is ECMAScript 6 and one way that you can use it today. There are a lot more cool features coming, including [rest parameters](http://ariya.ofilabs.com/2013/03/es6-and-rest-parameter.html), [generators](http://wiki.ecmascript.org/doku.php?id=harmony:rest_parameters), [default parameters](http://wiki.ecmascript.org/doku.php?id=harmony:parameter_default_values) and more!
+This is just a small look at the exciting future that is ECMAScript 6 and one way that you can use it today. There are a lot more cool features coming, including [rest parameters](http://wiki.ecmascript.org/doku.php?id=harmony:rest_parameters), [generators](http://wiki.ecmascript.org/doku.php?id=harmony:generators), [default parameters](http://wiki.ecmascript.org/doku.php?id=harmony:parameter_default_values) and more!
 
 There are also other ways to start playing with ES6, including the [Traceur Compiler](https://github.com/google/traceur-compiler) from Google and [es6-module-transpiler](http://square.github.io/es6-module-transpiler/).
 
