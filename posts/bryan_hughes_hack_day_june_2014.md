@@ -8,7 +8,7 @@ The next version of JavaScript, officially called [ECMAScript 6](http://wiki.ecm
 The addition of classes is arguably the largest addition to the language. JavaScript currently uses [prototypal inheritence](https://en.wikipedia.org/wiki/Prototype-based_programming) for managing objects, which works well enough. Unfortunately, people who come from more classical OOP languages like C++ and Java have a hard time adapting to and using prototypes. The new class syntax is just syntactic sugar over prototypes, but it should make JavaScript much more welcoming to developers coming from other languages.
 
 ```javascript
-class foo extends bar {
+class Foo extends Bar {
   constructor() {
     this._prop = 'my prop';
   }
@@ -53,7 +53,7 @@ let loader = new Loader({
 // Use loader to load things
 loader.load('foo').then(function(foo) {
   // Do stuff with foo
-})
+});
 ```
 
 There is a default loader that is exposed as part of the `System` object and is the loader used for handling ```import```/```export``` statements. Unfortunately, the module and module loader spec are undergoing some churn right now. I attempted to make this code as current as possible, but it will most likely be obsolete soon, and indeed may be wrong already.
@@ -92,7 +92,7 @@ import GridItem from 'R.Components.GridItem';
 export class Album extends GridItem {
   constructor() {
     super();
-    this._icon = this.model.get('icon')
+    this._icon = this.model.get('icon');
   }
   getIcon() {
     return this._icon;
